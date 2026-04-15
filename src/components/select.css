@@ -1,0 +1,26 @@
+.select-container {
+  position: relative;
+  width: 100%;
+}
+
+.select-native {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background-color: white;
+  cursor: pointer;
+  appearance: auto;
+}
+
+.select-native:focus {
+  outline: none;
+  border-color: #475569;
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.2);
+}
+
+.select-native:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
