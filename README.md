@@ -1,16 +1,133 @@
-# React + Vite
+# Select Component (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, accessible, and reusable select component for React applications.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Controlled value (`value` + `onChange`)
+* Optional placeholder support
+* Optional disabled state
+* Accessible via native `<select>` element (keyboard navigation, screen readers built-in)
+* Customizable via `className` prop
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+npm install select-mtdev2024
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ou
+
+```bash
+yarn add select-mtdev2024
+```
+
+---
+
+## Usage
+
+```jsx
+import { useState } from "react";
+import Select from "select-mtdev2024";
+import "select-mtdev2024/style.css";
+
+function App() {
+  const [value, setValue] = useState("");
+
+  const options = [
+    { value: "marketing", label: "Marketing" },
+    { value: "engineering", label: "Engineering" },
+  ];
+
+  return (
+    <Select
+      options={options}
+      value={value}
+      onChange={(val) => setValue(val)}
+      placeholder="Select a department..."
+    />
+  );
+}
+```
+
+---
+
+## Props
+
+| Prop | Type | Required ? | Description |
+|---|---|---|---|
+| `options` | `array` | Yes | Array of `{ value, label }` objects |
+| `value` | `string` | Yes | Currently selected value |
+| `onChange` | `function` | Yes | Callback with selected value as string |
+| `placeholder` | `string` | No | Default text when no value is selected |
+| `className` | `string` | No | Additional CSS classes |
+| `id` | `string` | No | For label association |
+| `ariaLabel` | `string` | No | aria-label if no visible label |
+| `disabled` | `boolean` | No | Disables the select |
+
+---
+
+## Options format
+
+Options must follow this structure:
+
+```js
+{ value: "marketing", label: "Marketing" }
+```
+
+If your data has a different format, transform it first:
+
+```js
+const options = data.map(item => ({
+  value: item.id,
+  label: item.name
+}))
+```
+
+---
+
+## Behavior
+
+* Selecting an option calls `onChange` with the selected value as a string
+* If `placeholder` is provided, it appears as the first option and cannot be selected
+* Component is not controlled internally — state must be managed by the parent
+
+---
+
+## Styling
+
+Import the default stylesheet:
+
+```jsx
+import "select-mtdev2024/style.css";
+```
+
+Override default styles using these CSS classes:
+
+```css
+.select-container { }
+.select-native { }
+```
+
+---
+
+## Type Documentation
+
+Props are documented using JSDoc comments directly in the source code.
+No runtime type checking dependency required.
+
+---
+
+## Improvements to consider
+
+* Add search/filter functionality
+* Add multi-select support
+* Add option groups support
+
+---
+
+## License
+
+MIT © MTDev2024
