@@ -2,13 +2,18 @@
 
 A lightweight, accessible, and reusable select component for React applications.
 
+[![npm](https://img.shields.io/npm/v/select-mtdev2024)](https://www.npmjs.com/package/select-mtdev2024)
+[![license](https://img.shields.io/npm/l/select-mtdev2024)](LICENSE)
+
+---
+
 ## Features
 
-* Controlled value (`value` + `onChange`)
-* Optional placeholder support
-* Optional disabled state
-* Accessible via native `<select>` element (keyboard navigation, screen readers built-in)
-* Customizable via `className` prop
+- Controlled value (`value` + `onChange`)
+- Optional placeholder support
+- Optional disabled state
+- Accessible via native `<select>` element (keyboard navigation, screen readers built-in)
+- Customizable via `className` prop
 
 ---
 
@@ -18,7 +23,7 @@ A lightweight, accessible, and reusable select component for React applications.
 npm install select-mtdev2024
 ```
 
-ou
+or
 
 ```bash
 yarn add select-mtdev2024
@@ -56,20 +61,20 @@ function App() {
 
 ## Props
 
-| Prop | Type | Required ? | Description |
-|---|---|---|---|
-| `options` | `array` | Yes | Array of `{ value, label }` objects |
-| `value` | `string` | Yes | Currently selected value |
-| `onChange` | `function` | Yes | Callback with selected value as string |
-| `placeholder` | `string` | No | Default text when no value is selected |
-| `className` | `string` | No | Additional CSS classes |
-| `id` | `string` | No | For label association |
-| `ariaLabel` | `string` | No | aria-label if no visible label |
-| `disabled` | `boolean` | No | Disables the select |
+| Prop          | Type        | Required | Description                              |
+|---------------|-------------|----------|------------------------------------------|
+| `options`     | `array`     | Yes      | Array of `{ value, label }` objects      |
+| `value`       | `string`    | Yes      | Currently selected value                 |
+| `onChange`    | `function`  | Yes      | Callback with selected value as string   |
+| `placeholder` | `string`    | No       | Default text when no value is selected   |
+| `className`   | `string`    | No       | Additional CSS classes                   |
+| `id`          | `string`    | No       | For label association                    |
+| `ariaLabel`   | `string`    | No       | `aria-label` if no visible label         |
+| `disabled`    | `boolean`   | No       | Disables the select                      |
 
 ---
 
-## Options format
+## Options Format
 
 Options must follow this structure:
 
@@ -90,9 +95,9 @@ const options = data.map(item => ({
 
 ## Behavior
 
-* Selecting an option calls `onChange` with the selected value as a string
-* If `placeholder` is provided, it appears as the first option and cannot be selected
-* Component is not controlled internally — state must be managed by the parent
+- Selecting an option calls `onChange` with the selected value as a string
+- If `placeholder` is provided, it appears as the first option and cannot be selected
+- Component is not controlled internally — state must be managed by the parent
 
 ---
 
@@ -122,12 +127,18 @@ No runtime type checking dependency required.
 
 ## Improvements to consider
 
-* Add search/filter functionality
-* Add multi-select support
-* Add option groups support
+- Add search/filter functionality
+- Add multi-select support
+- Add option groups support
 
 ---
 
 ## License
 
-MIT © MTDev2024
+MIT © 2026 Michael Takbou
+
+---
+
+## Author
+
+Michael Takbou · [LinkedIn](https://www.linkedin.com/in/michael-takbou/) · [Malt](https://www.malt.fr/profile/michaeltakbou)
